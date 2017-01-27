@@ -285,7 +285,7 @@ class App {
 
 		       //   let variableplain = thiscontentplaine;
 
-		 		 let displays = {
+		 		 let display = {
                  "id":id.value,
                  "photo":photo.value,
                  "destination":destination.value,
@@ -298,7 +298,7 @@ class App {
                  
                };
 
-               this.displays.push(displays);
+               this.displays.push(display);
               //  this.state[0].bind.content_plain = this.state[0].bind.plain_type = this.state[0].bind.plain_desc = [];
 		       id.value = photo.value = destination.value = from.value = to.value = comments.value = contacts.value = '';
 		       this.passView();
@@ -307,6 +307,7 @@ class App {
 
 
 	deleteAirPlaine(key){
+
 		let r = this.displays;
 		for(let i=0;i<r.length;i++){
 			if(r[i].id === key){
@@ -319,12 +320,10 @@ class App {
 
 	findAirPlaneByID(id){
 		let r = this.displays;
-		let count = 0;
 		for(let i=0;i<r.length;i++){
-			if(id===r[i].id){
+			if(r[i].id===id){
 				return r[i];
 			}
-			 
 		}
 	}	
 
@@ -416,7 +415,8 @@ class App {
 
     layOut(){
 
- let html = `      
+       let html = `
+
        <div id="airLayOut">
 	<nav>
     <div class="nav-wrapper blue lighten-100 z-depth-600">
@@ -429,13 +429,13 @@ class App {
         <li><a href="#passView" onclick="component.passView()"><i class="small material-icons left">supervisor_account</i>People on Board</a></li>
       </ul>
     </div>
-  </nav>
-       
-              <div id="displayStarter"></div>
-              <div id="displayParalax"></div>
-              <div id="formCreate"></div>
-              <div id="passView"></div>
-              <div id="plainView"></div>
+  </nav>      
+               <div id="Template"></div>
+               <div id="displayStarter"></div>
+               <div id="displayParalax"></div>
+               <div id="formCreate"></div>
+               <div id="passView"></div>
+               <div id="plainView"></div>
                <div id="updatePlane"></div>
                <div id="plainDetail"></div>
               
@@ -443,13 +443,13 @@ class App {
   <footer class="page-footer">
           <div class="container">
             <div class="row">
-              <div class="col l6 s12">
+              <div class="col l6 s6">
                 <h5 class="white-text">ABOUTS US</h5>
                 <p class="grey-text text-lighten-4"><a href="http://www.jetstar.com/ph/en/help/articles/when-to-get-to-the-airport-for-international-flights"/>Tour yourself around the world.</p>
                  <div class="row">
-				      <div class="col s3"><a href="#showStarter" onclick="component.displayStarter()">HOME</div>
-				      <div class="col s3"><a href="#showForm" onclick="component.formCreate()">RESERVED YOUR Flight</div>
-				      <div class="col s3"><a href="#passView" onclick="component.passView()">PEOPLE ON YOUR FLIGHT</div>
+				      <div class="black-text col s3"><a href="#showStarter" onclick="component.displayStarter()">HOME</div>
+				      <div class="col s12"><a href="#showForm" onclick="component.formCreate()">RESERVED YOUR Flight</div>
+				      <div class="col s6"><a href="#passView" onclick="component.passView()">PEOPLE ON YOUR FLIGHT</div>
 				    </div>
               </div>
               <div class="col l4 offset-l2 s12">
@@ -492,8 +492,7 @@ class App {
     	this.reRender(`
     	${html}`	  
     		,document.getElementById("app"));
-    	this.displayStarter();
-
+    	this.Template();
     }
 
    
@@ -540,16 +539,16 @@ class App {
 					</div>	
 				   </nav>		
 			        `;
-			html += `<div class="row card-panel grey lighten-500 z-depth-1000 hoverable" style="border-radius:5px;" id="nameSearch">`;
+			html += `<div class="row card-panel grey lighten-500 z-depth-1000 hoverable" style="border-radius:5px; margin-right:2px;margin-left:2px;" id="nameSearch">`;
             html += `
 			        <h3 class="center-align">List of Destination</h3>
             `;
-             html +=`<div class="row card-panel grey lighten-500 z-depth-1000 hoverable" style="border-radius:5px;">`;
+             html +=`<div class="row card-panel grey lighten-500 z-depth-1000 hoverable" style="border-radius:5px;margin-right:3px;margin-left:3px;">`;
 		   let r = this.displays;
 		   let count = 0;
-		     for(let i = 0;i<r.length; i++){
-			if(count++ === r[i])break;
-			    console.log(r[i]);
+		     for(let i=(r.length-1);i>=0;i--){
+			 if(count++ === 8)break;
+		    console.log(r[i]);
 			html+= `    	     
 			            <div class="col s12 m3">
 			         <i class="header"><b>${r[i].destination}</b></i>
@@ -579,40 +578,39 @@ class App {
       }
 
          plainView(id) {
-        
-           let  r = this.findAirPlaneByID(id);
-         
-         	 let  html = `		  
+           let html = ``;
+             id = id -1;
+         	  html +=`		  
                     <div class="col s6 m4 offset-m2 6 offset-l3">
 				        <div class="card-panel brown lighten-300 z-depth-400">
 				          <div class="row valign-wrapper">
 				            <div class="col s2  m2 offset-m1 6 offset-13">
-				            <img src="${r.photo}" class="triangle responsive-img" style="border-radius: 80em;">
-				            </div> 
+				            <img src="${this.displays[id].photo}" class="triangle responsive-img" style="border-radius: 80em;">
+				            </div>
 				            <div class="col s10">
 				            <h5>Destination</h5>
-                              <span class="black-text"><h2>${r.destination}</h2></span>	
+                              <span class="black-text"><h2>${this.displays[id].destination}</h2></span>	
 				            </div>
 				          </div>
                   <div class="col s12 m2 offset-m1 6 offset-13">
 			      <p class="brown lighten-300 z-depth-400" style="center-align"></p>
 			      </div>                     
          	       <ul class="collection with-header">
-			        <li class="collection-item"><h5>From: &nbsp&nbsp${r.from}</h5></li>
-			        <li class="collection-item"><h5>To: &nbsp&nbsp${r.to}</li>
-			        <li class="collection-item"><h5>Contacts: &nbsp&nbsp${r.contacts}</li>
-			        <li class="collection-item"><h5>Comments: &nbsp&nbsp${r.comments}</li>
+			        <li class="collection-item"><h5>From: &nbsp&nbsp${this.displays[id].from}</h5></li>
+			        <li class="collection-item"><h5>To: &nbsp&nbsp${this.displays[id].to}</li>
+			        <li class="collection-item"><h5>Contacts: &nbsp&nbsp${this.displays[id].contacts}</li>
+			        <li class="collection-item"><h5>Comments: &nbsp&nbsp${this.displays[id].comments}</li>
 			      </ul>
 			      <div class="card-action small">
-			      <span onclick="component.updatePlane(${r.id})" class="new badge small green" data-badge-caption="">Change</span>
-			      <span onclick="component.deleteAirPlaine(${r.id})" class="new badge small red" data-badge-caption="">DELETE</span>								
-				    <span onclick="component.passView(${r.id})" class="new badge small" data-badge-caption="">GO BACK</span>
+			      <span onclick="component.updatePlane(${this.displays[id].id})" class="new badge small green" data-badge-caption="">Change</span>
+			      <span onclick="component.deleteAirPlaine(${this.displays[id].id})" class="new badge small red" data-badge-caption="">DELETE</span>								
+				    <span onclick="component.passView()" class="new badge small" data-badge-caption="">GO BACK</span>
 				  </div>
 				  </br>			      
-			       `;    
+			       `; 
+			   
                   this.reRender(`${html}`,document.getElementById("plainView"));
                   this.showPlainView();
-                  //this.passView();
          }
 //<i class=" small material-icons left">perm_identity</i> photo,forward_des,room,trending_flat,phone,comments
 	formCreate() {
@@ -686,10 +684,9 @@ class App {
            <div class="slider">
     <ul class="slides">
       <li>
-        <img src="images/a2.jpg"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>FLIGHT YOUR HOME ANYWHERE.</h3>   
-        </div>
+      <img src="images/a6.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <h3 class="light red-text text-lighten-900">QATAR AIRWAYS</h3>
       </li>
       <li>
         <img src="images/a3.jpg"> <!-- random image -->
@@ -704,9 +701,9 @@ class App {
         </div>
       </li>
        <li>
-        <img src="images/a6.jpg"> <!-- random image -->
-        <div class="caption right-align">
-          <h3 class="light red-text text-lighten-900">QATAR AIRWAYS</h3>
+        <img src="images/a2.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>FLIGHT YOUR HOME ANYWHERE.</h3>   
         </div>
       </li>
       <li>
@@ -732,7 +729,7 @@ class App {
 			        
 		let html = `
 			<h4 class="center-align black lighten-500 z-depth-1000">Flight Your Home Anywhere</h4>
-			<div class="row card-panel grey lighten-500 z-depth-1000 hoverable" style="border-radius:5px;">
+			<div class="row card-panel grey lighten-500 z-depth-1000 hoverable" style="border-radius:5px;margin-left:3px;margin-right:3px;">
 		`;
      // html += `<div class="card-panel blue lighten-30 z-depth-200">`;
         let r = this.airplain;
@@ -893,10 +890,80 @@ this.reRender(`
 
   `,document.getElementById("updatePlane"));   
 this.showUpdatePlane();
-}
+}//
+   Template(){
+      let html = `
+     <div class="row center">
+     <div class="card-panel grey lighten-100 z-depth-500 hoverable" style="margin-left:12px;margin-right:12px;"> 
+    <div class="card-panel brown lighten-500 z-depth-1000 hoverable" style="border-radius:310px 10px;">
+      <h4 class="header center blue-text"><i><b>FIND YOUR FLIGHT TODAY</b></i></h1>
+      <div class="row center">
+        <h6 class="header col s12 light">QATAR AIRWAYS</h6>
+      </div>
+      <div class="row center">
+        <a href="#showStarter" id="download-button" onclick="component.displayStarter()" class="btn-large waves-effect waves-light orange">Get Started</a>
+      </div>
+      <br><br>  
+
+  <div class="container">
+  <img src="images/pi.png">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center black-text">Flight Reservation</h5>
+            <p class="light">Choose your desired plain to get Home with high comfortable desire</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center black-text">Passengers View & Choices</h5>
+
+            <p class="light">To fix things out in you mind.Handle your Baggages free!</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center black-text">Access Anywhere</h5>
+
+            <p class="light">Choose the best on your trip, and we provide high quality assurance at your service.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+
+    <div class="section">
+    </div>
+  </div>`;
+           this.reRender(`${html}`,document.getElementById("Template"));
+           this.showTemplate();
+         }
+
+           showTemplate() {
+        $('#Template').show();
+		$('#displayStarter').hide();
+		$('#displayParalax').hide();
+		$('#formCreate').hide();
+		$('#passView').hide();
+		$('#updatePlane').hide();
+		$('#plainView').hide();
+		$('#updateFlight').hide();
+		$('#plainDetail').hide();
+		}
+
 
 		showStarter() {
 		$('#displayStarter').show();
+		$('#Template').hide();
 		$('#displayParalax').hide();
 		$('#formCreate').hide();
 		$('#passView').hide();
@@ -911,6 +978,7 @@ this.showUpdatePlane();
 
         showForm() {
 		$('#formCreate').show();
+		$('#Template').hide();
 		$('#displayStarter').hide();
 		$('#displayParalax').hide();
 		$('#passView').hide();
@@ -922,6 +990,7 @@ this.showUpdatePlane();
 
 		showParalax(){
 		$('#displayParalax').show();
+		$('#Template').hide();
 		$('#displayStarter').hide();
 		$('#formCreate').hide();
 		$('#passView').hide();
@@ -934,6 +1003,7 @@ this.showUpdatePlane();
 
 		showPassView(){
 	    $('#passView').show();
+	    $('#Template').hide();
 		$('#displayParalax').hide();
 		$('#displayStarter').hide();
 		$('#formCreate').hide();
@@ -945,6 +1015,7 @@ this.showUpdatePlane();
 
        showPlainView(){
 	    $('#plainView').show();
+	    $('#Template').hide();
 		$('#displayParalax').hide();
 		$('#displayStarter').hide();
 		$('#formCreate').hide();
@@ -956,6 +1027,7 @@ this.showUpdatePlane();
 
 showUpdatePlane(){
 	    $('#plainView').hide();
+	    $('#Template').hide();
 		$('#displayParalax').hide();
 		$('#displayStarter').hide();
 		$('#formCreate').hide();
@@ -966,6 +1038,7 @@ showUpdatePlane(){
 
        showEdit(){
        	$('#Edit').show();
+       	$('#Template').hide();
        	$('#updateFlight').hide();
 	    $('#plainView').hide();
 		$('#displayParalax').hide();
@@ -979,6 +1052,7 @@ showUpdatePlane(){
 
        showNameSearch(){
        	$('#nameSearch').show();
+       	$('#Template').hide();
        	$('#Edit').hide();
        	$('#updateFlight').hide();
 	    $('#plainView').hide();
@@ -991,6 +1065,7 @@ showUpdatePlane(){
     } 
 		showPlainDetail(){
 	    $('#plainDetail').show();
+	    $('#Template').hide();
        	$('#nameSearch').hide();
        	$('#updateFlight').hide();
 	    $('#plainView').hide();

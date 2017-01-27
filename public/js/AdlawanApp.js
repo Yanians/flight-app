@@ -4,13 +4,13 @@
 class App {
 
 	constructor() {
-		this.display = [
+		this.displays = [
 		{
 		  "id":1,
 		  "photo":"images/2.jpg",
-		  "destination":"ALLEH ELLAH  QATAR",
+		  "destination":"DOHA QATAR",
 		  "from":"Manila",
-          "to":"DOHA QATAR",
+          "to":"ENGLAND",
           "contacts":"+639233477",
           /*"plainName":[
            {
@@ -57,7 +57,7 @@ class App {
 		  "photo":"images/1.jpg",
 		  "destination":"Sydney-Bundaberg flights",
 		  "from":"Singapor",
-          "to":"Sydney bundaberge flight",
+          "to":"EUROPE",
           "contacts":"+739246777",
            "comments":"It is nice to go back Home." 
 		  },	
@@ -85,8 +85,8 @@ class App {
 		{
 			"id":5,
 		  "photo":"images/4.jpg",
-		  "destination":"ALLEH ELLAH, QATAR",
-		  "from":"Manila",
+		  "destination":"CHINA",
+		  "from":"Taiwan",
            "to":"DOHA QATAR",
             "contacts":"+639233477",
            "comments":"I want an emediate schedule."
@@ -181,7 +181,7 @@ class App {
 			}
 		];
 
-    } // end of destiny og the line id you get my number of this game where did you
+    }
   
 	render(html, component){
 		component.innerHTML += html;
@@ -229,7 +229,7 @@ class App {
                  
                };
 
-               this.display.push(display);
+               this.displays.push(display);
                 this.state[0].bind.content_plain = this.state[0].bind.plain_type = this.state[0].bind.plain_desc = [];
 		       id.value = photo.value = destination.value = from.value = to.value = contacts.value = comments.value = '';
     } // end of create
@@ -237,10 +237,10 @@ class App {
 
 
 	deleteAirPlaine(key){
-		let r = this.display;
+		let r = this.displays;
 		for(let i=0;i<r.length;i++){
 			if(r[i].id == key){
-				this.display.splice(i,1);
+				this.displays.splice(i,1);
 				break;
 			}
 		}		
@@ -248,7 +248,7 @@ class App {
 	}
 
 	findAirPlaneByID(id){
-		let r = this.display;
+		let r = this.displays;
 		for(let i=0;i<r.length;i++){
 			if(id==r[i].id){
 				return r[i];
@@ -256,30 +256,30 @@ class App {
 		}
 	}	
 
-	updatePlaneRes(id){
+	// updatePlaneRes(id){
 
-	id = id+1;
-	let flightdummy = {
-	"id" :  id,
-	"photo" : $('#photo_1').val(),
-	"destination" : $('#destination_1').val(),
-	"from" : $('#from_1').val(),
-	"to" : $('#to_1').val(),
-	"contacts" : $('#contacts_1').val(),
-	"comments" : $('#comments_1').val()
+	// id = id+1;
+	// let flightdummy = {
+	// "id" :  id,
+	// "photo" : $('#photo_1').val(),
+	// "destination" : $('#destination_1').val(),
+	// "from" : $('#from_1').val(),
+	// "to" : $('#to_1').val(),
+	// "contacts" : $('#contacts_1').val(),
+	// "comments" : $('#comments_1').val()
 	
-	}
+	// }
 
-	let r = this.display;
-	for(let i=0;i<r.length;i++){
-	if(r[i].id == id){
-	  r[i] = flightdummy;
-	  break;
-	}
-	}
+	// let r = this.display;
+	// for(let i=0;i<r.length;i++){
+	// if(r[i].id == id){
+	//   r[i] = flightdummy;
+	//   break;
+	// }
+	// }
 
-	this.passView();
-	}
+	// this.passView();
+	// }
 
 
 
@@ -310,7 +310,7 @@ class App {
          
 	findAirPlaneByDestination(destination){  //use for search...
 		let objects = [];
-		let r = this.display;
+		let r = this.displays;
 		for(let i=0;i<r.length;i++){
 			let expr = (r[i].destination.toUpperCase().indexOf(destination.toUpperCase()) > -1);
 			 console.log(destination," vs ",r[i].destination," = ",expr);
@@ -342,21 +342,22 @@ class App {
 		console.log(bind);
 	}	
 
-	//    updateDetails(key){
-	//    	let ph = document.getElementById('updatePhoto');
-	// 	let des = document.getElementById('updateDestination');
-	// 	let fr = document.getElementById('updateFrom');
-	// 	let to = document.getElementById('updateTo');
-	// 	let com = document.getElementById('updateComments');
+	   updateDetails(key){
+	   	let ph = document.getElementById('photo_1');
+		let des = document.getElementById('destination_1');
+		let fr = document.getElementById('from_1');
+		let to = document.getElementById('to_1');
+		let com = document.getElementById('comments_1');
+		let con = document.getElementById('contacts_1');
 
-	// 	let m = this.display[key];
-	// 	let displays = {"id":m.id,"photo":ph.value,"destination":des.value,"from":fr.value,"to":to.value,"contacts":m.contacts, "comments":com.value};
+		let m = this.displays[key];
+		let display = {"id":m.id,"photo":m.photo,"destination":des.value,"from":fr.value,"to":to.value,"contacts":con.value, "comments":com.value};
 
-	// 	this.display[key] = displays;
-	// 	let details = document.getElementById('updateFlight');
-	// 	details.innerHTML = "";
-	// 	this.plainView();			
-	// }
+		this.displays[key] = display;
+		let details = document.getElementById('plainView');
+		details.innerHTML = "";
+		this.passView();			
+	}
 	
 
 } //end of app
@@ -370,12 +371,11 @@ class App {
     layOut(){
 
     	let html = `     
-             
 
        <div id="airLayOut" class="container-fixed">
 	<nav>
     <div class="nav-wrapper">
-      <a href="#showStarter" class="brand-logo">HOME</a>
+      <a href="#showStarter" class="brand-logo"><img src="images/btk.jpg" class="circle responsive-img">HOME</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#showForm" onclick="component.formCreate()">Take your Flight</a></li>
         <li><a href="#passView" onclick="component.passView()">People on Board</a></li>
@@ -438,7 +438,7 @@ class App {
 			html+= `
 				 <div class="row">
 			            <div class="col s6 m4">
-			    <h4 class="header">${r[i].to}</h4>
+			    <h4 class="header">${r[i].destination}</h4>
 			    <div class="card">
 			      <div class="card-image">
 			        <img src="${r[i].photo}">
@@ -487,13 +487,13 @@ class App {
 		<div class="row">
             `;
         
-		      let r = this.display;
+		      let r = this.displays;
 		      for(let i = 0;i<r.length;i++){
 
 		      	 html += `
 		      	 <div class="row">
 			            <div class="col s6 m4">
-			    <h4 class="header">${r[i].to}</h4>
+			    <h4 class="header">${r[i].destination}</h4>
 			    <div class="card">
 			      <div class="card-image">
 			        <img src="${r[i].photo}">
@@ -602,7 +602,7 @@ class App {
           <div class="row">
           <div class="center-align">
         <div class="input-field col s12">
-          <input disabled value="${this.display.length+1}" id="id" type="text" class="validate">
+          <input disabled value="${this.displays.length+1}" id="id" type="text" class="validate">
           <label for="id"></label>
         </div>
       </div>
@@ -709,30 +709,30 @@ class App {
 }
 
 updatePlane(id){
+ 
+	id = id -1;
+	//let bt = this.findAirPlaneByID(id);
 
-id = id - 1;
-
-let html = `
-
+	let html = `
+	
 
 <center>
 <form>
 <div class="row">
-<fieldset><legend>Bases</legend>
-<center><h1>Update Plane Reservation </h1></center>
-<center><span>Update photo <span class="required"value="${this.display[id].photo}">*</span></span><input type="email"id="photo_1" /></label></center>
-<center><span>Update destination<span class="required"value="${this.display[id].destination}">*</span></span><input type="email"id="destination_1"/></label></center>
-<center><span>Update from<span class="required"value="${this.display[id].from}">*</span></span><input type="email"id="from_1"/></label></center>
-<center><span>Update to<span class="required"value="${this.display[id].to}">*</span></span><input type="email"id="to_1"/></label></center>
-<center><span>Update Comments<span class="required"value="${this.display[id].comments}">*</span></span><input type="email"id="comments_1"/></label></center>
-<center><span>Update contacts<span class="required"value="${this.display[id].contacts}">*</span></span><input type="email"id="contacts_1"/></label></center>
-</select></label>
-</fieldset>
-
+<fieldset><legend></legend>
+<center><label><h1>Update Plane Reservation </h1>
+<img src="${this.displays[id].photo}" alt="" class="circle responsive-img"></center>
+<center><span class="required">Update destination</span><input type="text"id="destination_1" value="${this.displays[id].destination}"/></center>
+<center><span class="required">Update from</span><input type="text"id="from_1" value="${this.displays[id].from}"/></center>
+<center><span class="required">Update to</span><input type="text"id="to_1" value="${this.displays[id].to}"/></center>
+<center><span class="required">Update Comments</span><input type="text"id="comments_1" value="${this.displays[id].comments}"/></center>
+<center><span class="required">Update contacts</span></span><input type="text"id="contacts_1" value="${this.displays[id].contacts}"/></center>
+</label></label></label>
 
 <div class="center-align">
-<a onclick="component.updatePlaneRes(${id})" class="waves-effect blue waves-light btn">Update</a>
+<a onclick="component.updateDetails(${id})" class="waves-effect blue waves-light btn">Update</a>
 </div>
+</fieldset>
 </div>
 <form>
 </center>

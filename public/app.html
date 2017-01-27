@@ -1,32 +1,39 @@
-<html>
+<html lang="eng">
 <head>
-
-  <title>Materialize CSS Framework Demo</title>
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="icon" type="image/jpg" href="images/pi.png">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link href="css/bootstrap.css" rel="stylesheet">
+   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/app.css" type="text/css" rel="stylesheet"/>
+  <title>Flight</title>
 </head>
-
 <body>
+ <div id="app" class="container"></div>                   
+   <script src="js/jquery-3.1.1.js"></script>
+   <script src="js/jquery.validate.js"></script>
+   <script src="js/app.js"></script> 
+   <script src="js/materialize.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/init.js"></script>
+    <script>
 
-                <div id="app"></div>
-                        
-  <!-- jQuery is required by Materialize to function -->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/AdlawanApp.js"></script>
-  <script type="text/javascript">
+        $('#contactform').submit(function( event ) {
+            event.prop();
+     }
+
+    $('.carousel.carousel-slider').carousel({full_width: true});
     $(document).ready(function(){
-      $('.parallax').parallax();
-    });     
-  </script>
-
+      $('.slider').slider({full_width: true});
+    });
+         $("#contactform").validate();
+    </script>
+    <script src="js/holder.js"></script>
 </body>
 </html>

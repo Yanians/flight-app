@@ -293,28 +293,27 @@ img,#wows1_0,#wows1_1,#wows1_2,#wows1_3 {
   height:7px;
 }
 
-    img,.imgParalax {
+   .triangle/*, responsive-img */{
     border-radius: 4px;
-  /* width:600px;*/
-  /*height:200px;*/
+   width:400px;
+  height:400px;
   margin-left:0px;
   border-radius:3px;
  }
 
-
-    img, #imgParalax {
+   #imgParalax {
     border-radius: 4px;
-    width:600px;
-  height:100px;
-  margin-left:0px;
-  border-radius:2px;
+    width:800px;
+    height:200px;
+    margin-left:0px;
+    border-radius:2px;
  }
 
-/*#panelmeasure*/ {
+.imgParalax {
   border-radius: 10px;
-  width:900px;
-  height:800px;
-  margin-left:2px;
+  width:200px;
+  height:100px;
+  margin-left:0px;
   color:darkred;
  }
 

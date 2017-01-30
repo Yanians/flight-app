@@ -22,10 +22,11 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/init.js"></script>
-    <script>
+    <script src="js/holder.js"></script>
+    <script type="text/javascript">
 
         $('#contactform').submit(function( event ) {
-            event.prop();
+            event.defaultPrevent();
      });
 
     $('.carousel.carousel-slider').carousel({full_width: true});
@@ -34,6 +35,5 @@
     });
          $("#contactform").validate();
     </script>
-    <script src="js/holder.js"></script>
 </body>
 </html>

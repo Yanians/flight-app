@@ -33,7 +33,7 @@ class App {
           "to":"MAYANA ITALY",
           "comments":"I hope for a good weather thanks to GOD.",
           "contacts":"+759233000"
-		}, 	
+		} ,	
 
 		 {
 		  "id":4,
@@ -75,7 +75,7 @@ class App {
            "comments":"I hope for a very nice weather of my trip.",
            "contacts":"+639233477"
 		   
-		 },	
+		 },
 
 		 {
 			"id":8,
@@ -233,20 +233,20 @@ class App {
    
     ];
 
-       this.state = [
-			{
-				"bind": {
-					"content_plain":[],
-					"pass_id":[],
-					"pass_photo":[],
-					"pass_dest":[],
-					"pass_from":[],
-					"pass_comm":[],
-					"pass_con":[]
+  //      this.state = [
+		// 	{
+		// 		"bind": {
+		// 			"content_plain":[],
+		// 			"pass_id":[],
+		// 			"pass_photo":[],
+		// 			"pass_dest":[],
+		// 			"pass_from":[],
+		// 			"pass_comm":[],
+		// 			"pass_con":[]
 					
-				}
-			}
-		];
+		// 		}
+		// 	}
+		// ];
 
     }
   
@@ -310,7 +310,7 @@ class App {
 
 		let r = this.displays;
 		for(let i=0;i<r.length;i++){
-			if(r[i].id === key){
+			if(r[i].id == key){
 				this.displays.splice(i,1);
 				break;
 			}
@@ -395,9 +395,9 @@ class App {
     let contacts = document.getElementById('contacts');
  
     let m = this.displays[key];
-    let display = {"id":m.id, "photo":m.photo, "destination":destination.value, "from":from.value, "to":to.value, "comments":comments.value, "contacts":contacts.value};
-             
+    let display = {"id":m.id, "photo":m.photo, "destination":destination.value, "from":from.value, "to":to.value, "comments":comments.value, "contacts":contacts.value};        
     this.displays[key] = display;
+    //this.displays.push(display); 
     let details = document.getElementById('passView');
     details.innerHTML = "";
     this.passView();  
@@ -501,7 +501,7 @@ class App {
 		let r = this.findAirPlaneByDestination(destination);
 		for(let i=0;i<r.length;i++){
 
-			html +=`<div class="col s12 m3">
+			html +=`  <div class="col s12 m3">
 			         <i class="header"><b>${r[i].destination}</b></i>
 			                 <div class="card">
 			      <div class="card-image" col s4 m6>
@@ -510,7 +510,7 @@ class App {
 			      <div class="card-stacked">
 			        <div class="card-content">
 			         <ul><li><h6>From:&nbsp&nbsp${r[i].from}</h6></li>
-                      <li><span href="#" onclick="component.plainView(${r[i].id})" class="new badge small green" data-badge-caption="">Detail</span></li>
+                      <li><span href="#plainView" onclick="component.plainView(${r[i].id})" class="new badge small green" data-badge-caption="">Detail</span></li>
 			          </ul>
 			        </div>
 			      </div>
@@ -543,12 +543,13 @@ class App {
             html += `
 			        <h3 class="center-align">List of Destination</h3>
             `;
-             html +=`<div class="row card-panel grey lighten-500 z-depth-1000 hoverable" style="border-radius:5px;margin-right:3px;margin-left:3px;">`;
+             html +=`<div style="border-radius:5px;margin-right:3px;margin-left:3px;" class="row card-panel brown lighten-500 z-depth-1000 hoverable">`;
 		   let r = this.displays;
 		   let count = 0;
 		     for(let i=(r.length-1);i>=0;i--){
-			 if(count++ === 8)break;
-		    console.log(r[i]);
+			 if(count++ === r[i])break;
+			// r[i] = r[i];
+		   // console.log(r[i]);
 			html+= `    	     
 			            <div class="col s12 m3">
 			         <i class="header"><b>${r[i].destination}</b></i>
@@ -585,7 +586,7 @@ class App {
 				        <div class="card-panel brown lighten-300 z-depth-400">
 				          <div class="row valign-wrapper">
 				            <div class="col s2  m2 offset-m1 6 offset-13">
-				            <img src="${this.displays[id].photo}" class="triangle responsive-img" style="border-radius: 80em;">
+				            <img src="${this.displays[id].photo}" class="triangle responsive-img" style="border-radius:80em;width:80px;height:80px;">
 				            </div>
 				            <div class="col s10">
 				            <h5>Destination</h5>
@@ -614,13 +615,14 @@ class App {
          }
 //<i class=" small material-icons left">perm_identity</i> photo,forward_des,room,trending_flat,phone,comments
 	formCreate() {
+     let varia = [];	
+	let html = `
 
-	let html = `		
-    <form class="col s6" id="now" method="" onsubmit="component.createFlight(); return false;" action="component.passView(); return false;" >
+    <form class="col s6" id="now" method="" onsubmit="component.createFlight(); return false;" action="component.passView()" >
           <div class="row">
           <div class="center-align">
         <div class="input-field col s12">
-          <input value="${this.displays.length+1}" id="id" type="text" class="validate">
+          <input disabled value="${this.displays.length+1}" id="id" type="text" class="validate">
           <label for="id"></label>
         </div>
       </div>
@@ -744,7 +746,7 @@ class App {
                <div class="row valign-wrapper">
 
             <div class="col s900 m100 0ffset-m100 400 offset-400">
-              <img src="${r[i].photo}" alt="" class="triangle responsive-img">
+              <img src="${r[i].photo}" alt="" class="triangle responsive-img" id="imgParalax">
             </div>
 
             <div class="col s10">
@@ -844,7 +846,7 @@ class App {
          <fieldset>
              <div class="row">
              <div class="col s3 offset-m0 2 offset-60">
-				<img src="${this.displays[id].photo}" class="triangle responsive-img"></label></center>
+				<img src="${this.displays[id].photo}" class="triangle responsive-img" style="width:80px;height:80px;"></label></center>
 				</div></br></br>
             <div class="input-field col s6 offset-m1 6 offset-13">
             <i class=" small material-icons prefix">forward_des</i>
@@ -1048,7 +1050,6 @@ showUpdatePlane(){
 		$('#passView').hide();
 		$('#plainDetail').hide();
    }
-
 
        showNameSearch(){
        	$('#nameSearch').show();

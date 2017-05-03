@@ -1,990 +1,1085 @@
 "use strict"
 
-class App{
-	constructor(){
-		this.products = [
-			{
-				
-			},
-			{
-			},
-			{
-				
-			},
-			{
-				
-			}
-		];
+class App {
 
-		   this.products = [
-			{
-				
-			},
-			{
-			},
-			{
-				
-			},
-			{
-				
-			}
-		];
+	constructor() {
+		this.displays = [
+		{
+		  "id":1,
+		  "photo":"images/1.jpg",
+		  "destination":"DOHA QATAR",
+		  "from":"Manila",
+          "to":"ENGLAND",
+		  "comments":"Always looking afast flight to day",
+		  "contacts":"+639233477"   
+      },
 
-		this.products = [
-			{
-				
-			},
-			{
-			},
-			{
-				
-			},
-			{
-				
-			}
-		];
+         {
 
-    this.recipe = [
-      {
-        "id": 1,
-        "name": "Utan",
-        "description": "Utan or Utan Bisaya is a vegetable soup dish popular in the Visayan region, commonly it consists different vegetables like malunggay leaves, okra, squash, taro, vine spinach (alugbati), eggplants, snake beans (sitaw), ginger and tomatoes cooked together with either pork, fish or shrimps. Similar to laswa and the only difference it the vegetable used, are the ones commonly found in the Visayas.",
-        "photo": "img/utan.jpg",
-        "ingredients":[
-          {
-            "qty": "1 large bunch",
-            "name": "spinach"
-          },
-          {
-            "qty": "1/2 small",
-            "name": "butternut squash"
-          },
-          {
-            "qty": "200 g",
-            "name": "sliced okra"
-          },
-          {
-            "qty": "250 g",
-            "name": "fatty minced pork"
-          },
-          {
-            "qty": "6 cups",
-            "name": "chicken stock"
-          },
-          {
-            "qty": "1",
-            "name": "finely chopped onion"
-          },
-          {
-            "qty": "4 cloves",
-            "name": "minced garlic"
-          },
-          {
-            "qty": "1 tbsp",
-            "name": "minced ginger"
-          },
-          {
-            "qty": "1",
-            "name": "fish sauce"
-          },
-          {
-            "qty": "1",
-            "name": "freshly ground black pepper"
-          },
-          {
-            "qty": "1",
-            "name": "oil"
-          }
-        ],
-        "preparationtime": "15 minutes",
-        "cookingtime": "20 minutes",
-        "yields": "4-5 servings",
-        "procedure": [
-          "In a pot add oil then sauté garlic, ginger and onions.",
-          "Add the pork mince and cook until brown in colour.",
-          "Add the chicken stock then bring to a boil, simmer for 5 minutes.",
-          "Add the squash cook for 3 minutes.",
-          "Add the okra and cook for 3 more minutes.",
-          "Season with fish sauce and freshly ground black pepper add the spinach then simmer for one more minute, turn heat off then cover. Let spinach cook in residual heat for 2 minutes then serve."
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Tolang Bisaya",
-        "description": "One of the things and considered as very special food in Iligan City that is also known for fresh seafood capital in the region. Most fish sold in our local market here in Pila came from Laguna Lake, bangus (milkfish), tilapia, dalag (mudfish), hito and kanduli (catfish).",
-        "photo": "img/tolangbisaya.jpg",
-        "ingredients":[
-          {
-            "qty": "1/2 kilo",
-            "name": "Pampano or any white-meat fish"
-          },
-          {
-            "qty": "1",
-            "name": "quartered bell pepper"
-          },
-          {
-            "qty": "1 stalk",
-            "name": "Salay (lemongrass)"
-          },
-          {
-            "qty": "3",
-            "name": "quartered tomatoes"
-          },
-          {
-            "qty": "2",
-            "name": "sliced in half onions"
-          },
-          {
-            "qty": "1 bunch",
-            "name": "leeks"
-          },
-          {
-            "qty": "3 cups",
-            "name": "water"
-          }
-        ],
-        "preparationtime": "15 minutes",
-        "cookingtime": "20 minutes",
-        "yields": "4-5 servings",
-        "procedure": [
-          "Place all ingredients in a casserole except fish.",
-          "Bring to a boil.",
-          "Add the fish and boil again until the fish is cooked.",
-          "Serve hot."
-        ]
-      },
-      {
-        "id": 3,
-        "name": "Pork Humba Bisaya",
-        "description": "Humba (HOOM-BAA) is a Filipino dish similar to adobo, and popular in central part of the Philippines, particularly among the Visayan speaking people. The method of cooking is similar to adobo (chicken or lean pork) by simmering the meat in a marinade of soy sauce, vinegar, brown sugar, bay leaf, and peppercorns. The difference is the type of meat used which is pork belly, which has skin, fat, and lean portions.",
-        "photo": "img/porkhumbabisaya.jpg",
-        "ingredients":[
-          {
-            "qty": "2 lbs.",
-            "name": "cut into 1 and 1/2-inch squares of pork belly"
-          },
-          {
-            "qty": "1 pack",
-            "name": "dried banana blossoms"
-          },
-          {
-            "qty": "1/4 cup",
-            "name": "salted black beans"
-          },
-          {
-            "qty": "1/2 cup",
-            "name": "soy sauce"
-          },
-          {
-            "qty": "1/4 cup",
-            "name": "distilled white vinegar"
-          },
-          {
-            "qty": "1/2 cup",
-            "name": "brown sugar"
-          },
-          {
-            "qty": "6",
-            "name": "minced garlic cloves"
-          },
-          {
-            "qty": "2",
-            "name": "dry bay leaves"
-          },
-          {
-            "qty": "1 teaspoon",
-            "name": "whole peppercorns"
-          },
-          {
-            "qty": "4 cups",
-            "name": "water"
-          }
-        ],
-        "preparationtime": "10 minutes",
-        "cookingtime": "1 hours, 30 minutes",
-        "yields": "6-8 servings",
-        "procedure": [
-          "Rinse meat thoroughly under cold running water and pat dry with paper towels.",
-          "In a non-stick skillet over medium heat, arrange pork belly slices in one layer and pan-fry until most of the oil comes out. If you use a smaller pan, you may do this in two batches.",
-          "Once the meat turns brown and most of the fat has rendered, remove from heat and transfer to a cooking pot.",
-          "Add the rest of the ingredients into the pot and bring to a boil. Lower heat to medium low and simmer for an hour until pork has become tender and sauce has thickened.",
-          "Serve with rice."
-        ]
-      },
-      {
-        "id": 4,
-        "name": "Manok Adobo Sa Gata",
-        "description": "Masarap ang “native na manok” sa lutuing ito.  Masarap lalo na kapag ‘sinagkotsa ito sa tanglad” bago ito lagyan ng gata at luyang dilaw.",
-        "photo": "img/manokadobosagata.jpg",
-        "ingredients":[
-          {
-            "qty": "1 kilo",
-            "name": "manok adobo cut"
-          },
-          {
-            "qty": "1",
-            "name": "Sibuyas katamtaman ang laki"
-          },
-          {
-            "qty": "3",
-            "name": "butil ng Bawang"
-          },
-          {
-            "qty": "1 piece",
-            "name": "Laurel"
-          },
-          {
-            "qty": "1 piece",
-            "name": "Tanglad"
-          },
-          {
-            "qty": "1",
-            "name": "Luyang dilaw"
-          },
-          {
-            "qty": "1",
-            "name": "Luya"
-          },
-          {
-            "qty": "1",
-            "name": "Sili pangsigang o pamaksiw"
-          },
-          {
-            "qty": "1",
-            "name": "Sili Labuyo"
-          },
-          {
-            "qty": "1",
-            "name": "Sili pokingan o bell pepper"
-          },
-          {
-            "qty": "1",
-            "name": "Paminta durog"
-          },
-          {
-            "qty": "1/2 cup",
-            "name": "Vinegar"
-          },
-          {
-            "qty": "1 tablespoon",
-            "name": "Patis"
-          },
-          {
-            "qty": "1",
-            "name": "Magic Sarap"
-          },
-          {
-            "qty": "1",
-            "name": "Gata"
-          }
-        ],
-        "preparationtime": "10 minutes",
-        "cookingtime": "1 hours, 30 minutes",
-        "yields": "6-8 servings",
-        "procedure": [
-          "Igisa ang sibuyas, bawang at luya papulahin kunti",
-          "Ilagay ang manok, patis paminta at laurel, hayaan ng 5 minuto na kumukulo at ilagay na rin ang tanglad at suka.  Takpan.",
-          "Kapag tapos na itong pakuluan ng 5 minuto, ilagay ang pangalawang gata kasabay ang luyang dilaw na hiniwa-hiwa ng maliliit.  Hayaang kumulo ng mga  10 minuto.",
-          "Puwede nang isabay ang papaya na hiniwa ng slanting o ayon sa gusto mong sukat",
-          "Kapag luto na, ilagay na ang panghuling gata, kasabay ng siling pamaksiw at siling labuyo (tantyahin lamang ang gusto mong anghang).",
-          "Timplahin ng asin at magic sarap, ilagay ang bell pepper o siling pokingan.",
-          "Pakuluan ng dahan dahan hanggang sa ito ay lumapot.  Mas masarap kapag lumabas ang sariling mantika ng niyog ng kunti.",
-          "Ihain na mainit kasabay ng mainit din na kanin."
-        ]
-      }     
+		  "id":2,
+		  "photo":"images/2.jpg",
+		  "destination":"AUSTRALIA",
+		  "from":"Singapor",
+          "to":"EUROPE",
+           "comments":"It is nice to go back Home.",
+           "contacts":"+739246777" 
+		  },	
+
+		 {
+		  "id":3,
+		  "photo":"images/3.jpg",
+		  "destination":"SAUDI ARABIA",
+		  "from":"JAPAN",
+          "to":"MAYANA ITALY",
+          "comments":"I hope for a good weather thanks to GOD.",
+          "contacts":"+759233000"
+		} ,	
+
+		 {
+		  "id":4,
+		  "photo":"images/5.jpg",
+		  "destination":"MONGGOLIA",
+		  "from":"KOREA",
+          "to":"ESTADUS UNIDOS",
+          "comments":"Please update me if it is Good weather.",
+          "contacts":"+17923688"
+		 },	
+
+		{
+			"id":5,
+		  "photo":"images/4.jpg",
+		  "destination":"CHINA",
+		  "from":"Taiwan",
+           "to":"DOHA QATAR",
+           "comments":"I want an emediate schedule.",
+           "contacts":"+639233477"
+		   
+		 },	
+
+		{
+			"id":6,
+		  "photo":"images/11.jpeg",
+		  "destination":"LOS ANGELES",
+		  "from":"DUBAI",
+           "to":"LONDON",
+           "comments":"I hope for a very nice weather of my trip.",
+           "contacts":"+639233477"
+		 },	
+      
+         {
+			"id":7,
+		  "photo":"images/8.jpg",
+		  "destination":"ITALY",
+		  "from":"MOROCCO",
+           "to":"SPAIN",
+           "comments":"I hope for a very nice weather of my trip.",
+           "contacts":"+639233477"
+		   
+		 },
+
+		 {
+			"id":8,
+		  "photo":"images/9.jpg",
+		  "destination":"DUBAI",
+		  "from":"TAIWAN",
+           "to":"BRITAIN",
+           "comments":"I hope for a very nice weather of my trip.",
+           "contacts":"+639233477"
+		   
+		 }	
+			];  
+
+			this.airplain = [
+		{
+		  "id":1,
+		  "route":"CHINA TO QATAR",
+		  "origin":"MONGGOLIA",
+          "photo":"images/a1.jpg",
+          "description":"Eastern Flight from China to South America going back to origin.",
+		  "comments":"Always looking afast flight to day" ,
+		  "Content":[
+					{   "Photo":"images/a1.jpg",
+						"Capacity": "200 sheets",
+						"Comfort": "High foam chair",
+						"Personel": "Good service flight attendant",
+						"Baggage": "maximum free",
+						"Passage": "$9000.00",
+						"Info": "Lead your way to going Home."
+					} ]
+       },
+       {
+		  "id":2,
+		  "route":"QATAR TO AMERICA",
+		  "origin":"DOHA QATAR",
+          "photo":"images/a2.jpg",
+          "description":"Qatar to Philippines time interval daily flight.",
+		  "comments":"Always looking afast flight to day",
+		   "Content":[
+					{   "Photo":"images/a2.jpg",
+						"Capacity": "240 sheets",
+						"Comfort": "Good for family",
+						"Personel": "your service concern/flight attendant",
+						"Baggage": "Baggage free",
+						"Passage": "$12000.00",
+						"Info": "We find your ways Abroad."
+					} ]   
+       },
+       {
+		  "id":3,
+		  "route":"DUBAI TO SINGAPOR",
+		  "origin":"CHINA",
+          "photo":"images/a3.jpg",
+          "description":"Eastern flight from china to North America. time interval twice a week",
+		  "comments":"Always looking afast flight to day",
+		   "Content":[
+					{    "Photo":"images/a3.jpg",
+						"Capacity": "300 sheets",
+						"Comfort": "W/magazine that suit your likes",
+						"Personel": "w/ brilliant flight Attendant",
+						"Baggage": "minimum 4500 pds/ Baggage",
+						"Passage": "$3000.00",
+						"Info": "Keep in touch with us."
+					} ]   
+       },
+       {
+		  "id":4,
+		  "route":"SAUDI TO PHILIPPINES",
+		  "origin":"WESTERN COUNTRY",
+          "photo":"images/a4.jpg",
+          "description":"Western flight to Ecuador time interval twice a week.",
+		  "comments":"Always looking afast flight to day",
+		   "Content":[
+					{    "Photo":"images/a4.jpg",
+						"Capacity": "140 sheets",
+						"Comfort": "W/ satellite cable TV",
+						"Personel": "At your service 24/7",
+						"Baggage": "maximum capacity 5000 pds",
+						"Passage": "$18000.00",
+						"Info": "Your flight, our Journey."
+					} ]   
+       },
+       {
+		  "id":5,
+		  "route":"COLUMBIA TO ECUADOR",
+		  "origin":"SPAIN",
+          "photo":"images/a5.jpg",
+          "description":"North America going back to Origin.",
+		  "comments":"Always looking afast flight to day",
+		   "Content":[
+					{    "Photo":"images/a5.jpg",
+						"Capacity": "2000 sheets",
+						"Comfort": "W/live camera",
+						"Personel": "w/ brilliant flight Attendant",
+						"Baggage": "Baggage free",
+						"Passage": "$3000.00",
+						"Info": "Make your flight feel at Home."
+					} ]   
+       },
+       {
+		  "id":6,
+		  "route":"MALAYSIA TO EUROPE",
+		  "origin":"PACIFIC ASIA",
+          "photo":"images/a120.jpg",
+          "description":"Columbia Flight going back to Origin.",
+		  "comments":"Always looking afast flight to day",
+		   "Content":[
+					{
+						 "Photo":"images/a120.jpg",
+						"Capacity": "200 sheets",
+						"Comfort": "W/ comfortable foam onboard.",
+						"Personel": "w/ Good service Personel/flight attendant",
+						"Baggage": "Baggage free",
+						"Passage": "$8000.00",
+						"Info": "Keep you safe till you Home."
+					} ]   
+       },
+       {
+		  "id":7,
+		  "route":"AFGHANISTAN TO RUSSIA",
+		  "origin":"JERUSALEM",
+          "photo":"images/a7.jpg",
+          "description":"Central Egypt Government, internatinal. going back to Origin.",
+		  "comments":"Always looking as fast flight to day",
+		   "Content":[
+					{
+						 "Photo":"images/a7.jpg",
+						"Capacity": "180 sheets",
+						"Comfort": "W/live camera",
+						"Personel": "Full service concern.",
+						"Baggage": "5000 pds available",
+						"Passage": "$3000.00",
+						"Info": "We will make your flight feel at Home."
+					} ]   
+       },
+       {
+		  "id":8,
+		  "route":"BRAZIL TO EUROGUAY",
+		  "origin":"PAPUA NEW GUINEA",
+          "photo":"images/a8.jpg",
+          "description":"South America to Atlantic Country going back to Origin.Time interval trice a week.",
+		  "comments":"Always looking afast flight to day",
+		   "Content":[
+					{
+						"Photo":"images/b4.png",
+						"Capacity": "250 sheets",
+						"Comfort": "W/ live camera in Open Games",
+						"Personel": "w/ brilliant flight Attendant",
+						"Baggage": "Baggage free",
+						"Passage": "$12000.00",
+						"Info": "Flight Anywhere in the World."
+					} ]   
+       }
+
+   
     ];
-    this.state = [
-      {
-        "bind": {
-          "procedures":[],
-          "ingredients_qty":[],
-          "ingredients_name":[]
-        }
-      }
-    ];
-   } // end of constructor
 
+  //      this.state = [
+		// 	{
+		// 		"bind": {
+		// 			"content_plain":[],
+		// 			"pass_id":[],
+		// 			"pass_photo":[],
+		// 			"pass_dest":[],
+		// 			"pass_from":[],
+		// 			"pass_comm":[],
+		// 			"pass_con":[]
+					
+		// 		}
+		// 	}
+		// ];
+
+    }
+  
 	render(html, component){
-
 		component.innerHTML += html;
 	}
 
 	reRender(html, component){
-
 		component.innerHTML = html;
 	}
 
-createRecipe(){
-    let id = document.getElementById('recipe_id');
-    let name = document.getElementById('recipe_name');
-    let description = document.getElementById('recipe_description');
-    let photo = document.getElementById('recipe_photo');
-    let preparationtime = document.getElementById('recipe_preparationtime');
-    let cookingtime = document.getElementById('recipe_cookingtime');
-    let yields = document.getElementById('recipe_yields');
-    
-    let dummyIngredients = [];
-    for(let i=0;i<this.state[0].bind.ingredients_qty.length;i++){
-      dummyIngredients.push({
-        "qty" : this.state[0].bind.ingredients_qty[i],
-        "name" : this.state[0].bind.ingredients_name[i]
-      });
-    }
+    createFlight() {
+				
+				let id = document.getElementById('id');
+				let photo = document.getElementById('photo');
+				let destination = document.getElementById('destination');
+				let from = document.getElementById('from');
+				let to = document.getElementById('to');
+				let comments = document.getElementById('comments');
+				let contacts = document.getElementById('contacts');
+                
 
-    let ingredients = dummyIngredients;
-    let dummyProcedure = [];
-    for(let i=0;i<this.state[0].bind.procedures.length;i++){
-      dummyProcedure.push(this.state[0].bind.procedures[i]);
-    }
+		       //        let accessflight=[];
+		       //    for(let i=0;i<this.state[0].bind.plain_type.length;i++){
+			      //      accessflight.push({
+				     //      "plainphoto" : this.state[0].bind.plain_type[i],
+				     //      "description" : this.state[0].bind.plain_desc[i]
+			      // });
+		       //  }
 
-    let procedure = dummyProcedure;
+		       //   let nameOfPlaine = accessflight; 
+		       //   let thiscontentplaine = []; 
+		       //   for(let i=0;i<this.state[0].bind.content_plain.length;i++){
+		       //   	thiscontentplaine.push(this.state[0].bind.content_plain[i]);
+		       //   }
 
-    let recipe = {      
-      "id": id.value,
-      "name": name.value,
-      "description": description.value,
-      "photo": photo.value,
-      "ingredients":ingredients,
-      "preparationtime": preparationtime.value,
-      "cookingtime": cookingtime.value,
-      "yields": yields.value,
-      "procedure": procedure
-    };
+		       //   let variableplain = thiscontentplaine;
+
+		 		 let display = {
+                 "id":id.value,
+                 "photo":photo.value,
+                 "destination":destination.value,
+                 "from":from.value,
+                 "to":to.value,
+                 "comments":comments.value,
+                 "contacts":contacts.value
+                 // "plainName":nameOfPlaine, 
+                 
+                 
+               };
+
+               this.displays.push(display);
+              //  this.state[0].bind.content_plain = this.state[0].bind.plain_type = this.state[0].bind.plain_desc = [];
+		       id.value = photo.value = destination.value = from.value = to.value = comments.value = contacts.value = '';
+		       this.passView();
+    } // end of create
 
 
-    this.recipe.push(recipe);
 
-    //Clear Fields
-    this.state[0].bind.procedures = this.state[0].bind.ingredients_qty = this.state[0].bind.ingredients_name = [];
-    id.value = name.value = description.value = photo.value = preparationtime.value = cookingtime.value = yields.value = ''; 
-  } //end of create 
+	deleteAirPlaine(key){
 
-    deleteRecipe(key){
-    let r = this.recipe;
-    for(let i=0;i<r.length;i++){
-      if(r[i].id == key){
-        this.recipe.splice(i,1);
-        break;
-      }
-    }   
-    this.recipeList();
-  }
-
-  findRecipeByID(id){
-    let r = this.recipe;
-    for(let i=0;i<r.length;i++){
-      if(id==r[i].id){
-        return r[i];
-      }
-    }
-  } 
-
-  findRecipeByName(name){
-    let objects = [];
-    let r = this.recipe;
-    for(let i=0;i<r.length;i++){
-      let expr = (r[i].name.toUpperCase().indexOf(name.toUpperCase()) > -1);
-      console.log(name," vs ",r[i].name," = ",expr);
-      if(expr){
-        objects.push(r[i]);
-      }
-    }
-    return objects;
-  }
-
-  bindRecipeNewProcedures(val,id){
-    let bind = this.state[0].bind.procedures;
-    bind[id] = val;
-    // console.log(bind);
-  } 
-
-  bindRecipeNewIngredients(val,id,obj){
-    let bind = null;
-    if(obj === "qty"){
-      bind = this.state[0].bind.ingredients_qty;
-    }
-    else if(obj === "name"){
-      bind = this.state[0].bind.ingredients_name;
-    }
-    bind[id] = val;
-    // console.log(bind);
-  }
-
-	create(){
+		let r = this.displays;
+		for(let i=0;i<r.length;i++){
+			if(r[i].id == key){
+				this.displays.splice(i,1);
+				break;
+			}
+		}		
+		this.passView();
 	}
 
-	delete(){
+	findAirPlaneByID(id){
+		let r = this.displays;
+		for(let i=0;i<r.length;i++){
+			if(r[i].id===id){
+				return r[i];
+			}
+		}
+	}	
+
+	findID(id){
+		let r = this.airplain;
+		let count = 0;
+		for(let i=0;i<r.length;i++){
+			if(id===r[i].id){
+				return r[i];
+			}
+			
+		}
+	}	
+
+	bindPlainNewData(val,id,obj){
+		let bind = null;
+		if(obj === "plainphoto"){
+			bind = this.state[0].bind.plain_type;
+		}
+		else if(obj === "description"){
+			bind = this.state[0].bind.plain_desc;
+		}
+		bind[id] = val;
+		 console.log(bind);
+	}	
+         
+	findAirPlaneByDestination(destination){  //use for search...
+		let objects = [];
+		let r = this.displays;
+		for(let i=0;i<r.length;i++){
+			let expr = (r[i].destination.toUpperCase().indexOf(destination.toUpperCase()) > -1);
+			 console.log(destination," vs ",r[i].destination," = ",expr);
+			if(expr){
+				objects.push(r[i]);
+			}
+		}
+		return objects;
 	}
 
-	update(){
+
+	bindAirPlaneNewContentplain(val,id){
+
+		let bind = this.state[0].bind.procedures;
+		bind[id] = val;
+		console.log(bind);
 	}
+       
+  bindAirPlaneNewplainName(val,id,obj){
+		let bind = null;
+		if(obj === "plainphoto"){
+			bind = this.state[0].bind.plain_type;
+		}
+		else if(obj === "description"){
+			bind = this.state[0].bind.plain_desc;
+		}
+		bind[id] = val;
 
-} // end of App
+		console.log(bind);
+	}	
 
+	   updateDetails(key){
+  
+    let id = document.getElementById('id');
+    let photo = document.getElementById('photo');
+    let destination = document.getElementById('dest');
+    let from = document.getElementById('from');
+    let to = document.getElementById('to');
+    let comments = document.getElementById('comments');
+    let contacts = document.getElementById('contacts');
+ 
+    let m = this.displays[key];
+    let display = {"id":m.id, "photo":m.photo, "destination":destination.value, "from":from.value, "to":to.value, "comments":comments.value, "contacts":contacts.value};        
+    this.displays[key] = display;
+    //this.displays.push(display); 
+    let details = document.getElementById('passView');
+    details.innerHTML = "";
+    this.passView();  
+   
+	  }	
 
+} //end of app
 
-class Component extends App{
-	constructor(){
-		super();
-	}
+							class Component extends App {
+
+								constructor(){
+									super();
+								}
+								//<i class="small material-icons left"> <img src="images/b4.png"/> //store class //supervisor_account
 
     layOut(){
-        let html =`
-             <div id="layOut">
-        <nav class="light-blue lighten-1" role="navigation">
-          <div class="nav-wrapper container">
-            <a href="#" onclick="component.layOut()" class="brand-logo">HOME</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="#" onclick="component.recipeList()"><i class="material-icons left"></i>Recipes</a></li>
-              <li><a href="#" onclick="component.recipeCreate()"><i class="material-icons left"></i>Create</a></li>          
-              <li><a href="#" onclick="component.sideNavigation()"><i class="material-icons left"></i>Menu</a></li>
-            </ul>
+
+       let html = `
+
+       <div id="airLayOut">
+	<nav>
+    <div class="nav-wrapper blue lighten-100 z-depth-600">
+    <ul class="left brand-logo">
+    <li><a href="#formCreate" onclick="component.displayStarter()"><i class="large material-icons left">store</i>HOME</a></li>
+    </ul>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="#displayParalax" onclick="component.displayParalax()" style="margin-left:2px;"><img src="images/pi.png" class="triangle responsive-img" style="border-radius:10em; width:20px; height:17px;">Flight</a></li>
+        <li><a href="#formCreate" onclick="component.formCreate()"><i class=" small material-icons left">class</i>take your flight</a></li>
+        <li><a href="#passView" onclick="component.passView()"><i class="small material-icons left">supervisor_account</i>People on Board</a></li>
+      </ul>
+    </div>
+  </nav>      
+               <div id="Template"></div>
+               <div id="displayStarter"></div>
+               <div id="displayParalax"></div>
+               <div id="formCreate"></div>
+               <div id="passView"></div>
+               <div id="plainView"></div>
+               <div id="updatePlane"></div>
+               <div id="plainDetail"></div>
+              
+           
+  <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s6">
+                <h5 class="white-text">ABOUTS US</h5>
+                <p class="grey-text text-lighten-4"><a href="http://www.jetstar.com/ph/en/help/articles/when-to-get-to-the-airport-for-international-flights"/>Tour yourself around the world.</p>
+                 <div class="row">
+				      <div class="black-text col s3"><a href="#showStarter" onclick="component.displayStarter()">HOME</div>
+				      <div class="col s12"><a href="#showForm" onclick="component.formCreate()">RESERVED YOUR Flight</div>
+				      <div class="col s6"><a href="#passView" onclick="component.passView()">PEOPLE ON YOUR FLIGHT</div>
+				    </div>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">FOLLOW</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/?stype=lo&jlou=Affd_zmu0oQ34q2V00SweCI3MTqjhpWR7h4pvXnIej55iR-PTzolfoafz401D9kLREuUaBLRehuRUOT0l6ILIZyfM-xuDF2VAxaBE95wisXBCA&smuh=39032&lh=Ac8PoaDK_BMt0cWr"><img src="images/logof.png">SHARE </a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.youtube.com"><img src="images/logoy.png">SHARE</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.google.com"><img src="images/gogol.png">SHARE </a></li>
+                  
+                </ul>
+              </div>
+            </div>
           </div>
-        </nav>
-               </div>
 
-      <div id="sideNavigation"></div>
-      <div id="paralax"></div>
-      <div id="home"></div>
-      <div id="menu"></div>
-      <div id="recipeCreate"></div>
-      <div id="recipeNewProcedures"></div>
-      <div id="recipeNewIngredients"></div>
-      <div id="recipeListItems"></div>
-      <div id="recipeList"></div>
-      <div id="recipeView"></div>
-    
-  <footer class="page-footer teal">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like its our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <div class="footer-copyright">
+            <div class="container">
+            <div class="row">© 2016 2017  Web - Developer Design @Adlawan
+             <div class="col 1 offset-2 s1">
+             <img src="images/home.jpg" class="none">
+              </div>
+                <div class="col 1 offset-1 s1">
+                     <img src="images/home2.jpg" class="none">
+                     </div>      
+                        <div class="col 1 offset-1 s1">      
+                           <img src="images/home3.jpg" class="none">
+                           </div>
+                              <div class="col 1 offset-0 s1">      
+                                <img src="images/home4.jpg" class="none">
+                                </div>
+                                   <div class="col 1 offset-0 s1">      
+                                     <img src="images/home5.png" class="none">
+                                     </div>
+            <a class="grey-text text-lighten-4 right" href="http://www.jetstar.com/ph/en/help/articles/when-to-get-to-the-airport-for-international-flights">FLIGHT HISTORY AROUND THE WORLD</a>
+            </div>
+          </div>
+        </footer></div>
+           </div>
+         </div>
+    		`;
+    	this.reRender(`
+    	${html}`	  
+    		,document.getElementById("app"));
+    	this.Template();
+    }
 
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
-  </footer>
-        `;
-         html += ``;
+   
+	nameSearch(destination){ // use for Search
+		let html = ``;
+		let r = this.findAirPlaneByDestination(destination);
+		for(let i=0;i<r.length;i++){
+
+			html +=`  <div class="col s12 m3">
+			         <i class="header"><b>${r[i].destination}</b></i>
+			                 <div class="card">
+			      <div class="card-image" col s4 m6>
+			        <img src="${r[i].photo}" class="imgParalax">
+			           </div>
+			      <div class="card-stacked">
+			        <div class="card-content">
+			         <ul><li><h6>From:&nbsp&nbsp${r[i].from}</h6></li>
+                      <li><span href="#plainView" onclick="component.plainView(${r[i].id})" class="new badge small green" data-badge-caption="">Detail</span></li>
+			          </ul>
+			        </div>
+			      </div>
+			    </div>
+			 </div>
+			`;
+		}	
 
 		this.reRender(`
 			${html}
-			`,document.getElementById("app"));
-		this.paralax();
-     this.showNavigation();
+			`,document.getElementById("nameSearch"));	
 
-} // end of LayOut
+		$('#passView').show();	
+	}
+       passView(){
+      let  html = `<iframe src="charity.html"></iframe>`;
+            html += `<nav>
+                        <div class="nav-wrapper">
+                           <form class="form">
+						<div class="input-field">
+							<input onkeyup="component.nameSearch(this.value)" id="search" type="search" placeholder="Search" required/>
+	                         <label for="search"><i class="material-icons center-align">search</i></label>
+	                         <i class="material-icons">close</i>
+						</div>
+						</form>
+					</div>	
+				   </nav>		
+			        `;
+			html += `<div class="row card-panel grey lighten-500 z-depth-1000 hoverable" style="border-radius:5px; margin-right:2px;margin-left:2px;" id="nameSearch">`;
+            html += `
+			        <h3 class="center-align">List of Destination</h3>
+            `;
+             html +=`<div style="border-radius:5px;margin-right:3px;margin-left:3px;" class="row card-panel brown lighten-500 z-depth-1000 hoverable">`;
+		   let r = this.displays;
+		   let count = 0;
+		     for(let i=(r.length-1);i>=0;i--){
+			 if(count++ === r[i])break;
+			// r[i] = r[i];
+		   // console.log(r[i]);
+			html+= `    	     
+			            <div class="col s12 m3">
+			         <i class="header"><b>${r[i].destination}</b></i>
+			                 <div class="card">
+			      <div class="card-image" col s4 m6>
+			        <img src="${r[i].photo}" class="imgParalax">
+			           </div>
+			      <div class="card-stacked">
+			        <div class="card-content">
+			         <ul><li><h6>From:&nbsp&nbsp${r[i].from}</h6></li>
+                      <li><span href="#plainView" onclick="component.plainView(${r[i].id})" class="new badge small green" data-badge-caption="">Detail</span></li>
+			          </ul>
+			        </div>
+			      </div>
+			    </div>
+			 </div>
+          `;         
+      }   
+ 
+        html += `</div>`;
+ 
+            this.reRender(`
+		         ${html}
+		                `,document.getElementById("passView"));
+	                   this.showPassView();
+	                   this.plainView;
+      }
 
-recipeCreate(){
-    let html = `
-      <div class="row">
-        <form class="col s12">
-        <h5 class="center-align">Create New Recipe</h5>
-        <button onclick="component.createRecipe()" class="btn waves-effect waves-light">Save</button>
+         plainView(id) {
+           let html = ``;
+             id = id -1;
+         	  html +=`		  
+                    <div class="col s6 m4 offset-m2 6 offset-l3">
+				        <div class="card-panel brown lighten-300 z-depth-400">
+				          <div class="row valign-wrapper">
+				            <div class="col s2  m2 offset-m1 6 offset-13">
+				            <img src="${this.displays[id].photo}" class="triangle responsive-img" style="border-radius:80em;width:80px;height:80px;">
+				            </div>
+				            <div class="col s10">
+				            <h5>Destination</h5>
+                              <span class="black-text"><h2>${this.displays[id].destination}</h2></span>	
+				            </div>
+				          </div>
+                  <div class="col s12 m2 offset-m1 6 offset-13">
+			      <p class="brown lighten-300 z-depth-400" style="center-align"></p>
+			      </div>                     
+         	       <ul class="collection with-header">
+			        <li class="collection-item"><h5>From: &nbsp&nbsp${this.displays[id].from}</h5></li>
+			        <li class="collection-item"><h5>To: &nbsp&nbsp${this.displays[id].to}</li>
+			        <li class="collection-item"><h5>Contacts: &nbsp&nbsp${this.displays[id].contacts}</li>
+			        <li class="collection-item"><h5>Comments: &nbsp&nbsp${this.displays[id].comments}</li>
+			      </ul>
+			      <div class="card-action small">
+			      <span onclick="component.updatePlane(${this.displays[id].id})" class="new badge small green" data-badge-caption="">Change</span>
+			      <span onclick="component.deleteAirPlaine(${this.displays[id].id})" class="new badge small red" data-badge-caption="">DELETE</span>								
+				    <span onclick="component.passView()" class="new badge small" data-badge-caption="">GO BACK</span>
+				  </div>
+				  </br>			      
+			       `; 
+			   
+                  this.reRender(`${html}`,document.getElementById("plainView"));
+                  this.showPlainView();
+         }
+//<i class=" small material-icons left">perm_identity</i> photo,forward_des,room,trending_flat,phone,comments
+	formCreate() {
+     let varia = [];	
+	let html = `
+
+    <form class="col s6" id="now" method="" onsubmit="component.createFlight(); return false;" action="component.passView()" >
           <div class="row">
-            <div class="input-field col s6">
-              <input disabled value="${this.recipe.length+1}" id="recipe_id" type="text" class="validate">
-            </div>
-            <div class="input-field col s6">
-              <input id="recipe_name" type="text" class="validate">
-              <label for="recipe_name">NAME</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="recipe_description" type="text" class="validate">
-              <label for="recipe_description">DESCRIPTION</label>
-            </div>
-            <div class="input-field col s6">
-              <input id="recipe_photo" type="text" class="validate">
-              <label for="recipe_photo">PHOTO</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s4">
-              <input id="recipe_preparationtime" type="text" class="validate">
-              <label for="recipe_preparationtime">PREPARATION TIME</label>
-            </div>
-            <div class="input-field col s4">
-              <input id="recipe_cookingtime" type="text" class="validate">
-              <label for="recipe_cookingtime">COOKING TIME</label>
-            </div>
-            <div class="input-field col s4">
-              <input id="recipe_yields" type="text" class="validate">
-              <label for="recipe_yields">YIELDS</label>
-            </div>
-          </div>
-
-
-          <div class="row">
-            <div class="input-field col s6">
-              <h6> INGREDIENTS</h6>
-              <button onclick="component.recipeNewIngredients()" class="btn-floating waves-effect waves-light"><i class="material-icons">add</i></button>
-              <div id="recipeNewIngredients"></div>
-            </div>
-            <div class="input-field col s6">
-              <h6>PROCEDURES</h6>
-              <button onclick="component.recipeNewProcedures()" class="btn-floating waves-effect waves-light"><i class="material-icons">add</i></button>
-              <div id="recipeNewProcedures"></div>
-            </div>
-          </div>          
-        </form>
-      </div>      
-    `;
-
-    this.reRender(`
-      ${html}
-      `,document.getElementById("recipeCreate"));
-   this.showRecipeCreate();  
-  }
-
-  recipeNewProcedures(){
-    let bind = this.state[0].bind.procedures;
-    bind.push("");    
-    
-    let html = ``;
-    for(let i=0;i<bind.length;i++){
-      let decode_bind = `onkeyup="component.bindRecipeNewProcedures(this.value,${i})"`;
-      html += `
-        <div class="row">
-          <div class="input-field col s12">
-            <input ${decode_bind} value="${bind[i]}" type="text" />         
-          </div>
-        </div>    
-      `;
-    }
-
-    this.reRender(`
-      ${html}
-      `,document.getElementById("recipeNewProcedures"));
-  }
-
-  recipeNewIngredients(obj){
-    let bind_qty = this.state[0].bind.ingredients_qty;
-    let bind_name = this.state[0].bind.ingredients_name;
-    bind_qty.push("");    
-    bind_name.push("");   
-    
-    let html = ``;
-    for(let i=0;i<bind_qty.length;i++){
-      let decode_bind_qty = `onkeyup="component.bindRecipeNewIngredients(this.value,${i},'qty')"`;
-      let decode_bind_name = `onkeyup="component.bindRecipeNewIngredients(this.value,${i},'name')"`;
-      html += `
-        <div class="row">
-          <div class="input-field col s12">
-            <input ${decode_bind_qty} value="${bind_qty[i]}" type="text" />         
-          </div>
-        </div>  
-        <div class="row">
-          <div class="input-field col s12">
-            <input ${decode_bind_name} value="${bind_name[i]}" type="text" />         
-          </div>
-        </div>    
-      `;
-    }
-
-    this.reRender(`
-      ${html}
-      `,document.getElementById("recipeNewIngredients"));
-  } 
-
-   recipeListItems(name){ // use for Search
-    let html = `
-    <ul id="slide-out" class="side-nav">
-         <li><div class="userView">
-           <div class="background">
-          <img src="img/r2.jp  g">
-        </div>  
-     
-      <a href="#!user"><img class="circle" src="img/r2.jpg"></a>
-       <a href="#!name"><span class="white-text-name" >Brian Adlawan></span></a>
-         <a href="#!email"><span class="white-text-email" >christineSarah@gmail.com></span></a>
-          </div></li>
-          <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-          <li><a href="#!">SEcond Link</a></li>
-          <li><div class="divider">Subheader</div></li>
-          <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-          </ul>
-       <a href="#" data-activates="slide-out" class="button-collapse"<i class="material-icons"></i></a>
-       `;
-    let r = this.findRecipeByName(name);
-    for(let i=0;i<r.length;i++){
-      html+= `
-        <div class="col s12 m4">
-          <div class="card small hoverable">
-            <div class="card-image">
-              <img src="${r[i].photo}">
-              <span class="card-title">${r[i].name}</span>
-            </div>
-            <div class="card-content">
-              <p>${r[i].description}</p>
-            </div>
-            <div class="card-action">
-              <a href="#" onclick="component.recipeView(${r[i].id})">More</a>
-            </div>
-          </div>
+          <div class="center-align">
+        <div class="input-field col s12">
+          <input disabled value="${this.displays.length+1}" id="id" type="text" class="validate">
+          <label for="id"></label>
         </div>
-      `;
-    }   
-    this.reRender(`
-      ${html}
-      `,document.getElementById("recipeListItems"));
-        this.showRecipeList();
-  }
-
-
-  recipeList(){
-    let html = `
-      <br/>
-        <nav>
-          <div class="nav-wrapper white">
-          <form>
-            <div class="input-field">       
-              <input onkeyup="component.recipeListItems(this.value)" id="search" type="search" placeholder="Search" required>
-              <label for="brytup"><i class="material-icons">search</i></label>
-              <i class="material-icons">close</i>
-            </div>
-          </form>
-        </div>
-      </nav>
-      <br/>
-    `;
-
-    html += `<div class="row" id="recipeListItems">`;
-      
-    let r = this.recipe;
-    for(let i=0;i<r.length;i++){
-      html+= `
-        <div class="col s12 m4">
-          <div class="card small hoverable">
-            <div class="card-image">
-              <img src="${r[i].photo}">
-              <span class="card-title">${r[i].name}</span>
-            </div>
-            <div class="card-content">
-              <p>${r[i].description}</p>
-            </div>
-            <div class="card-action">
-              <a href="#" onclick="component.recipeView(${r[i].id})">More</a>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    html += `</div>`;
-
-    this.reRender(`
-      ${html}
-      `,document.getElementById("recipeList"));
-   this.showRecipeList();  
-  }
-
-   recipeView(id){ //recipeView link option (more);
-     let r = this.findRecipeByID(id);
-
-    let html = `<h1>This is from recipeView</h1>
-      <h5 class="center-align">${r.name}</h5>
-      <div class="row">       
-        <div class="col s12 m12">
-          <div class="card horizontal small">
-            <div class="card-image">
-              <img src="${r.photo}">
-            </div>
-            <div class="card-stacked">
-              <div class="card-content">
-                <p>${r.description}</p>
-              </div>
-              <div class="card-action small">               
-                <span onclick="component.deleteRecipe(${r.id})" class="new badge small red" data-badge-caption="">DELETE</span>
-                <span onclick="component.recipeList()" class="new badge small" data-badge-caption="">BACK TO HOME</span>
-              </div>
-            </div>          
-          </div>        
-        </div>      
       </div>
-    `;
-
-    html += `
-      <div class="row">
-        <table class="striped">
-          <thead>
-            <tr>
-              <th>Preparation Time</th>
-              <th>Cooking Time</th>
-              <th>Yields</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>${r.preparationtime}</td>
-              <td>${r.cookingtime}</td>
-              <td>${r.yields}</td>
-            </tr>         
-          </tbody>
-        </table>
-      </div>
-    `;
-
-    html += `
-      <div class="row">       
-        <div class="col s6 m6">
-          <h6>Ingredients</h6>
-          <ul class="collection">
-    `;
-
-    for(let i=0;i<r.ingredients.length;i++){
-      let ri = r.ingredients[i];
-      html += `
-            <li class="collection-item avatar">
-              <i class="material-icons circle">star</i>
-              <span class="title">${ri.qty}</span>
-              <p>${ri.name}<br>
-                
-              </p>
-              
-            </li>
-      `;
-    }
-
-    html += `       
-          </ul>
+            </br></br>
+        <div class="input-field col s5 offset-m1 6 offset-13">
+        <i class=" small material-icons prefix">photo</i>
+        <input  id="photo" type="text" class="validate" required>
+         <label for="photo" data-error="wrong" data-success="right">Link your image</label>
         </div>
-        <div class="col s6 m6">
-          <h6>Procedure</h6>
-          <ul class="collection">
-    `;
 
-    for(let i=0;i<r.procedure.length;i++){
-      let rp = r.procedure[i];
-      html += `
-            <li class="collection-item avatar">
-              <i class="material-icons circle">done</i>
-              <span class="title">Step ${i+1}</span>
-              <p>${rp}<br>
-                
-              </p>
-              
-            </li>
-      `;
-    } 
-
-    html += `
-          </ul>
-        </div>      
+        <div class="input-field col s4 offset-m1 6 offset-13">
+        <i class=" small material-icons prefix">forward_des</i>
+          <input id="destination" type="text" class="validate" required>
+          <label for="destination" data-error="wrong" data-success="right">Destination Address</label>
+        </div>
+       
+         <div class="row">
+        <div class="input-field col s5 offset-m1 6 offset-13">
+        <i class=" small material-icons prefix">room</i>
+          <input  id="from" type="text" class="validate">
+          <label for="from">From</label>
+        </div>
+        <div class="input-field col s4 offset-m1 6 offset-13">
+        <i class=" small material-icons prefix">trending_flat</i>
+          <input id="to" type="text" class="validate" required>
+          <label for="to" data-error="wrong" data-success="right">To:</label>
+        </div>
       </div>
-    `;
-
-    this.reRender(`   
-      ${html}     
-      `,document.getElementById("recipeView"));
-       this.showRecipeView();
-  }
-
-    sideNavigation(){
-   let html =`             
-      <ul id="slide-out" class="side-nav">
-         <li><div class="userView">
-           <div class="background">
-          <img src="img/r2.jpg">
-        </div>      
-      <a href="#!user"><img class="circle" src="img/r2.jpg"></a>
-       <a href="#!name"><span class="white-text-name" >Brian Adlawan></span></a>
-         <a href="#!email"><span class="white-text-email" >christineSarah@gmail.com></span></a>
-          </div></li>
-          <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-          <li><a href="#!">SEcond Link</a></li>
-          <li><div class="divider">Subheader</div></li>
-          <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-          </ul>
-       <a href="#" data-activates="slide-out" class="button-collapse"<i class="material-icons"></i></a>
-    	`;
-    	this.reRender(`
+         <div class="row">
+        <div class="input-field col s5 offset-m1 6 offset-13">
+        <i class=" small material-icons prefix">phone</i>
+          <input id="contacts" type="text" class="validate" required>
+          <label for="contacts" data-error="wrong" data-success="right">Contact Details</label>
+        </div>
+      </div>  
+       <div class="input-field col s5 offset-m1 6 offset-13">
+       <i class=" small material-icons prefix">comments</i>
+       <textarea id="comments" class="textarea-field" required></textarea>
+       <label for="comments" data-error="wrong" data-success="right">&nbsp;<p>Leave comments here.</center>
+        </div>             
+        <div class="input-field col s4">
+              <center><button type="submit" class="btn waves-effect waves-light">Save</button></center>
+		    </div>
+    </form>
+  </div>
+        
+		`;
+          this.reRender(`
 			${html}
-			`,document.getElementById("sideNavigation"));
-      this.showNavigation();
-  }
+			`,document.getElementById("formCreate"));  
+              this.showForm();
+        //       this.state[0].bind.content_plain = [];		
+		      // this.state[0].bind.plain_type = [];		
+		      // this.state[0].bind.plain_desc = [];	
+       }
 
+         displayStarter(){
+ 
+           let html = `
 
-    paralax(){
-    	let html =`
-                <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center teal-text text-lighten-2">INQUIRE NOW FOR CONTINOUOS ORDERING</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">SHOP AS YOU WANT</h5>
+           <div class="slider">
+    <ul class="slides">
+      <li>
+      <img src="images/a6.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <h3 class="light red-text text-lighten-900">QATAR AIRWAYS</h3>
+      </li>
+      <li>
+        <img src="images/a3.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>ACCESS!</h3>
         </div>
-        <div class="row center">
-          <a href="http:#home" onclick="component.home()" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+      </li>
+      <li>
+        <img src="images/aa.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <h2 class="light grey-text text-lighten-2">FLY HIGH</h5>
         </div>
-        <br><br>
-
-      </div>
-    </div>
-    <div class="parallax"><img src="img/r1.jpg" alt="Unsplashed background img 1"></div>
+      </li>
+       <li>
+        <img src="images/a2.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>FLIGHT YOUR HOME ANYWHERE.</h3>   
+        </div>
+      </li>
+      <li>
+        <img src="images/a4.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>ON BOARD NOW!</h3>
+          
+        </div>
+      </li>
+    </ul>
   </div>
 
+</div>  
+        
+  `;              
+       this.reRender(`
+			${html}
+			`,document.getElementById("displayStarter")); 
+			this.showStarter(); 
+}
+
+	  displayParalax(){
+			        
+		let html = `
+			<h4 class="center-align black lighten-500 z-depth-1000">Flight Your Home Anywhere</h4>
+			<div class="row card-panel grey lighten-500 z-depth-1000 hoverable" style="border-radius:5px;margin-left:3px;margin-right:3px;">
+		`;
+     // html += `<div class="card-panel blue lighten-30 z-depth-200">`;
+        let r = this.airplain;
+        let count = 0;
+        for(let i=(r.length-1);i>=0;i--){
+
+        	if(count++ === 8)
+        		break;
+			 html += `
+			<div class="col s10 m80 offset-m1 1 offset-1">     
+             <div class="card-panel brown lighten-1000 z-depth-10 hoverable">
+               <div class="row valign-wrapper">
+
+            <div class="col s900 m100 0ffset-m100 400 offset-400">
+              <img src="${r[i].photo}" alt="" class="triangle responsive-img" id="imgParalax">
+            </div>
+
+            <div class="col s10">
+              <span class="black-text">${r[i].description}
+              </span>
+            </div>
+
+            <div class="col s10">
+                <span onclick="component.plainDetail(${r[i].id})" class="new badge small green" data-badge-caption="">VIEW PLAIN</span>
+                </div>
+          </div>
+        </div>
+      </div> 
+      `;
+    }        
+		    this.reRender(`
+				${html}
+			`,document.getElementById("displayParalax")); 
+		  this.showParalax();
+        
+}
+
+        plainDetail(id){
+            let r = this.findID(id);
+            
+            //grade
+         	let html = `
+                   <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="${r.photo}" style="height:400px;">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">${r.route}<i class="material-icons right">more_vert</i></span>
+      <p><a href="#" onclick="component.displayParalax()">PLAIN</a></p>
+    </div>
+    <div class="card-reveal brown lighten-300 z-depth-400" >
+      <span class="card-title grey-text text-darken-4"><i><b>${r.route}</b></i><i class="material-icons right">close</i></span>
+       `;
+
+       for(let i=0;i<r.Content.length;i++){
+			let ri = r.Content[i];
+			 html +=`
+      <ul class="collection">
+      <li class="collection-item avatar">
+      <img src="${ri.Photo}" alt="" class="circle">
+      <span class="title">${ri.Info}</span>
+      <a href="#!" class="secondary-content"><i class="material-icons"></i></a>
+    </li>
+        </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle">folder</i>
+      <p>Capacity: ${ri.Capacity}<br>
+         ${ri.Comfort}
+      </p>
+      <a href="#!" class="secondary-content"><i class="material-icons"></i></a>
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle">insert_chart</i>
+      <p>${ri.Personel}<br>
+          ${ri.Baggage}
+      </p>
+      <a href="#!" class="secondary-content"><i class="material-icons"></i></a>
+    </li>
+
+    <li class="collection-item avatar">
+      <i class="material-icons circle">play_arrow</i>
+      <p><br>
+       Passage:   ${ri.Passage}
+      </p>
+      <a href="#!" class="secondary-content"><i class="material-icons"></i></a>
+    </li>
+  </ul>
+    `;
+ }
+ 
+   html +=`
+     
+     <div class="card-action small">
+		 <span onclick="component.formCreate()" class="left new badge small green" data-badge-caption="">On board!</span>
+		 <span onclick="component.displayParalax()" class=" left new badge small red" data-badge-caption="">PLAIN HOME</span>								
+		 <span onclick="component.passView()" class=" left new badge small" data-badge-caption="">Search People</span>
+	 </div>   
+    </div>
+  </div>
+        `;  
+          this.reRender(`${html}`,document.getElementById("plainDetail"));
+                  this.showPlainDetail();
+    }
+
+    
+     updatePlane(id){
+	  id = id -1;                       //forward_des,room,trending_flat,mode_edit,phone
+     let  html =`
+  
+ <div class="container-fixed">
+    <form class="col s1" id="contactform" method=""  onsubmit="component.updateDetails(${id}); return false;" action="component.updateDetails(${id})">
+         <fieldset>
+             <div class="row">
+             <div class="col s3 offset-m0 2 offset-60">
+				<img src="${this.displays[id].photo}" class="triangle responsive-img" style="width:80px;height:80px;"></label></center>
+				</div></br></br>
+            <div class="input-field col s6 offset-m1 6 offset-13">
+            <i class=" small material-icons prefix">forward_des</i>
+                <input id="dest" type="text" value="${this.displays[id].destination}" class="form-control" required autofocus>
+                <label for="dest" data-error="wrong" data-success="right">Change Destination</label>
+            </div>
+            <div class="input-field col s6 offset-m4 6 offset-10">
+            <i class=" small material-icons prefix">room</i>
+                <input id="from" name="from" type="text" value="${this.displays[id].from}" class="form-control" required autofocus>
+                <label for="from" data-error="wrong" data-success="right">Change origin</label>
+            </div>
+            <div class="input-field col s6 offset-m4 6 offset-13">
+            <i class=" small material-icons prefix">trending_flat</i>
+                <input id="to" name="to" type="text" value="${this.displays[id].to}" class="form-control" required autofocus>
+                <label for="to" data-error="wrong" data-success="right">Change ongoing</label>
+            </div>
+               </div>
+             <div class="row">
+            <div class="input-field col s6 offset-m4 6 offset-13">
+              <i class="small material-icons prefix">mode_edit</i>
+                <input id="comments" name="comments" type="text" value="${this.displays[id].comments}" class="form-control" required autofocus>
+                <label for="comme  nts" data-error="wrong" data-success="right">Comments</label>
+            </div>        
+            <div class="input-field col s6 offset-m4 6 offset-13">
+             <i class=" small material-icons prefix">phone</i>
+                <input id="contacts" name="contacts" type="text" value="${this.displays[id].contacts}" class="form-control"
+                 required>
+                <label for="contacts" data-error="wrong" data-success="right">Contact Details</label>
+            </div>
+            <div class="input-field col s6 offset-m4 6 offset-30">
+             <button type="submit" class="btn btn-lg btn-primary btn-block"/>UPDATE<?button>
+            </div>
+
+          </div>  
+        </div>            
+     </fieldset>               
+    </form>
+  </div>
+  `;    
+this.reRender(`
+
+  ${html}
+
+  `,document.getElementById("updatePlane"));   
+this.showUpdatePlane();
+}//
+   Template(){
+      let html = `
+     <div class="row center">
+     <div class="card-panel grey lighten-100 z-depth-500 hoverable" style="margin-left:12px;margin-right:12px;"> 
+    <div class="card-panel brown lighten-500 z-depth-1000 hoverable" style="border-radius:310px 10px;">
+      <h4 class="header center blue-text"><i><b>FIND YOUR FLIGHT TODAY</b></i></h1>
+      <div class="row center">
+        <h6 class="header col s12 light">QATAR AIRWAYS</h6>
+      </div>
+      <div class="row center">
+        <a href="#showStarter" id="download-button" onclick="component.displayStarter()" class="btn-large waves-effect waves-light orange">Get Started</a>
+      </div>
+      <br><br>  
 
   <div class="container">
+  <img src="images/pi.png">
     <div class="section">
 
       <!--   Icon Section   -->
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
-
-            <p class="light">flexible Items that suit your needs</p>
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center black-text">Flight Reservation</h5>
+            <p class="light">Choose your desired plain to get Home with high comfortable desire</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">Outstanding motives</h5>
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center black-text">Passengers View & Choices</h5>
 
-            <p class="light">people are love ordering products online</p>
+            <p class="light">To fix things out in you mind.Handle your Baggages free!</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Ask me About it</h5>
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center black-text">Access Anywhere</h5>
 
-            <p class="light">09096692894</p>
+            <p class="light">Choose the best on your trip, and we provide high quality assurance at your service.</p>
           </div>
         </div>
       </div>
 
     </div>
-  </div>
+    <br><br>
 
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="img/r2.jpg" alt="Unsplashed background img 2"></div>
-  </div>
-
-  <div class="container">
     <div class="section">
-
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-        </div>
-      </div>
-
     </div>
-  </div>
+  </div>`;
+           this.reRender(`${html}`,document.getElementById("Template"));
+           this.showTemplate();
+         }
 
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="img/r3.jpg" alt="Unsplashed background img 3"></div>
-  </div>
-    	`;
-    	this.reRender(`
-			${html}
-			`,document.getElementById("paralax"));
-    	this.showParalax();
-    }
+           showTemplate() {
+        $('#Template').show();
+		$('#displayStarter').hide();
+		$('#displayParalax').hide();
+		$('#formCreate').hide();
+		$('#passView').hide();
+		$('#updatePlane').hide();
+		$('#plainView').hide();
+		$('#updateFlight').hide();
+		$('#plainDetail').hide();
+		}
 
-		showParalax() {
-    		$('#paralax').show();
-        $('#recipeCreate').hide();
-        $('#recipeList').hide();
-    		$('#home').hide();
-  	    $(document).ready(function(){
-        $('.parallax').parallax();      
-      });
-    }
 
-    showNavigation(){
-        $('#layOut').show();
-        $(document).ready(function(){
-        $('.button-collapse').sideNav('show');
-        $('.collapsible').collapsible();
-         $('#sideNavigation').show();
-      });   
-    }  
-	
-     showRecipeView(){
-    $('#recipeView').show();
-    $('#recipeRecent').hide();
-    $('#recipeList').hide();
-    $('#recipeCreate').hide();
-    $('#sideNavigation').show();
-   }
-     showRecipeList(){
-          $('#recipeList').show();
-          $('#recipeView').hide();
-          $('#recipeRecent').hide();
-          $('#recipeCreate').hide(); 
-          $('#paralax').hide(); 
-          $('#sideNavigation').show();
-     }
-   showRecipeCreate(){
-      $('#recipeCreate').show();
-      $('#recipeList').hide();
-      $('#recipeView').hide();
-      $('#recipeRecent').hide();
-      $('#paralax').hide();
-      this.state[0].bind.procedures = [];   
-      this.state[0].bind.ingredients_qty = [];    
-      this.state[0].bind.ingredients_name = [];
-     $('#sideNavigation').show();
-  }
+		showStarter() {
+		$('#displayStarter').show();
+		$('#Template').hide();
+		$('#displayParalax').hide();
+		$('#formCreate').hide();
+		$('#passView').hide();
+		$('#updatePlane').hide();
+		$('#plainView').hide();
+		$('#updateFlight').hide();
+		$('#plainDetail').hide();
+	  $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+    });
+		}
 
-    showRecipeList(){
-         $('#recipeList').show();
-         $('#recipeView').hide();
-         $('#recipeRecent').hide();
-         $('#recipeCreate').hide(); 
-         $('#paralax').hide(); 
-         $('#sideNavigation').show();  
-    }     
+        showForm() {
+		$('#formCreate').show();
+		$('#Template').hide();
+		$('#displayStarter').hide();
+		$('#displayParalax').hide();
+		$('#passView').hide();
+		$('#updatePlane').hide();
+		$('#plainView').hide();
+	    $('#updateFlight').hide();
+	    $('#plainDetail').hide();
+		}
+
+		showParalax(){
+		$('#displayParalax').show();
+		$('#Template').hide();
+		$('#displayStarter').hide();
+		$('#formCreate').hide();
+		$('#passView').hide();
+		$('#updatePlane').hide();
+        $('#parallax').hide();
+        $('#plainView').hide();
+        $('#updateFlight').hide();
+        $('#plainDetail').hide();	
+	}
+
+		showPassView(){
+	    $('#passView').show();
+	    $('#Template').hide();
+		$('#displayParalax').hide();
+		$('#displayStarter').hide();
+		$('#formCreate').hide();
+		$('#plainView').hide();
+		$('#updatePlane').hide();
+		$('#updateFlight').hide();
+		$('#plainDetail').hide();
+    }       
+
+       showPlainView(){
+	    $('#plainView').show();
+	    $('#Template').hide();
+		$('#displayParalax').hide();
+		$('#displayStarter').hide();
+		$('#formCreate').hide();
+		$('#passView').hide();
+		$('#updatePlane').hide();
+		$('#updateFlight').hide();
+		$('#plainDetail').hide();
+    }      
+
+showUpdatePlane(){
+	    $('#plainView').hide();
+	    $('#Template').hide();
+		$('#displayParalax').hide();
+		$('#displayStarter').hide();
+		$('#formCreate').hide();
+		$('#passView').hide();
+		$('#updatePlane').show();
+		$('#plainDetail').hide();
 }
 
+       showEdit(){
+       	$('#Edit').show();
+       	$('#Template').hide();
+       	$('#updateFlight').hide();
+	    $('#plainView').hide();
+		$('#displayParalax').hide();
+		$('#updatePlane').hide();
+		$('#displayStarter').hide();
+		$('#formCreate').hide();
+		$('#passView').hide();
+		$('#plainDetail').hide();
+   }
+
+       showNameSearch(){
+       	$('#nameSearch').show();
+       	$('#Template').hide();
+       	$('#Edit').hide();
+       	$('#updateFlight').hide();
+	    $('#plainView').hide();
+		$('#displayParalax').hide();
+		$('#updatePlane').hide();
+		$('#displayStarter').hide();
+		$('#formCreate').hide();
+		$('#passView').show();
+		$('#plainDetail').hide();
+    } 
+		showPlainDetail(){
+	    $('#plainDetail').show();
+	    $('#Template').hide();
+       	$('#nameSearch').hide();
+       	$('#updateFlight').hide();
+	    $('#plainView').hide();
+		$('#displayParalax').hide();
+		$('#updatePlane').hide();
+		$('#displayStarter').hide();
+		$('#formCreate').hide();
+		$('#passView').hide();
+     }
+  
+} 
 let component = new Component();
-component.layOut();
+    component.layOut();
+    
+
+        

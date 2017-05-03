@@ -320,20 +320,3 @@ img,#wows1_0,#wows1_1,#wows1_2,#wows1_3 {
 div #cl a {
   color:black;
 }
-.container{
-  margin: 0px;
-  padding: 0px;
-  width:100%;
-}
-
-.brand-logo{
-  margin-left:10px;  
-}
-
-footer{
-  padding: 10px; 
-}
-
-.company{
-  color: yellow;
-}
